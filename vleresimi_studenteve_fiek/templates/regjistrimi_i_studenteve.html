@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="container content-section col-8">
+    <h4>Ketu behet regjistrimi i studenteve ne sistem!</h4>
+    <h5>---> Ju lutem shenoni ID-ne e studentit, emrin dhe mbiemrin!</h5>
+    <hr>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <div class="form-group">
+                {{ form.given_id.label(class="form-control-label") }}
+                {% if form.given_id.errors %}
+                    {{ form.given_id(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.given_id.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.given_id(class="form-control form-control-lg", autocomplete="off") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.emri.label(class="form-control-label") }}
+                {% if form.emri.errors %}
+                    {{ form.emri(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.emri.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.emri(class="form-control form-control-lg", autocomplete="off") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.mbiemri.label(class="form-control-label") }}
+                {% if form.mbiemri.errors %}
+                    {{ form.mbiemri(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.mbiemri.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.mbiemri(class="form-control form-control-lg", autocomplete="off") }}
+                {% endif %}
+            </div>
+            <div class="form-group m-2">
+                {{ form.submit(class="btn btn-danger") }}
+            </div>
+        </fieldset>
+    </form>
+</div>
+{% endblock content %}

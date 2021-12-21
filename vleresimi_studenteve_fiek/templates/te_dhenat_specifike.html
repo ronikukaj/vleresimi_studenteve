@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="container">
+    <br>
+    <h5>Notat per studentin <strong class="text-danger">{{ studenti.emri }} {{ studenti.mbiemri }}</strong> me numer te id - {{ studenti.given_id }}</h5>
+    <br>
+    <table class="table table-striped rounded">
+        <thead>
+            <tr class="bg-danger text-white">
+                <th scope="col">Lenda</th>
+                <th scope="col">Kollokfiumi 1</th>
+                <th scope="col">Kollokfiumi 2</th>
+                <th scope="col">Detyra 1</th>
+                <th scope="col">Detyra 2</th>
+                <th scope="col">Aktiviteti</th>
+                <th scope="col">Vijueshmeria</th>
+                <th scope="col">Totali</th>
+                <th scope="col">Nota</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for nota in notat %}
+                <tr>
+                    <th scope="row">{{ nota.lenda }}</th>
+                    <td>{{ nota.kollokfiumi_1 }}</td>
+                    <td>{{ nota.kollokfiumi_2 }}</td>
+                    <td>{{ nota.detyra_1 }}</td>
+                    <td>{{ nota.detyra_2 }}</td>
+                    <td>{{ nota.aktiviteti }}</td>
+                    <td>{{ nota.vijueshmeria }}</td>
+                    <td>{{ (nota.kollokfiumi_1 + nota.kollokfiumi_2 + nota.detyra_1 + nota.detyra_2 + nota.aktiviteti + nota.vijueshmeria) }}</td>
+                    <td class="text-danger"><strong>{{ nota.nota_value }}</strong></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

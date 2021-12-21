@@ -1,0 +1,131 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="container content-section col-8">
+    <h4>Ju lutem plotesoni formularin, ashtu qe vlerat e pikeve mos te tejkalojne vleren 100!</h4>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <div class="form-group">
+                {{ form.emri.label(class="form-control-label") }}
+                {% if form.emri.errors %}
+                    {{ form.emri(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.emri.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.emri(class="form-control form-control-lg", autocomplete="off") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.mbiemri.label(class="form-control-label") }}
+                {% if form.mbiemri.errors %}
+                    {{ form.mbiemri(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.mbiemri.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.mbiemri(class="form-control form-control-lg", autocomplete="off") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.lenda.label(class="form-control-label") }}
+                {% if form.lenda.errors %}
+                    {{ form.lenda(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.lenda.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.lenda(class="form-control form-control-lg", autocomplete="off") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.kollokfiumi_1.label(class="form-control-label") }}
+                {% if form.kollokfiumi_1.errors %}
+                    {{ form.kollokfiumi_1(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.kollokfiumi_1.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.kollokfiumi_1(class="form-control form-control-lg", autocomplete="off") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.kollokfiumi_2.label(class="form-control-label") }}
+                {% if form.kollokfiumi_2.errors %}
+                    {{ form.kollokfiumi_2(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.kollokfiumi_2.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.kollokfiumi_2(class="form-control form-control-lg", autocomplete="off") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.detyra_1.label(class="form-control-label") }}
+                {% if form.detyra_1.errors %}
+                    {{ form.detyra_1(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.detyra_1.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.detyra_1(class="form-control form-control-lg", autocomplete="off") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.detyra_2.label(class="form-control-label") }}
+                {% if form.detyra_2.errors %}
+                    {{ form.detyra_2(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.detyra_2.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.detyra_2(class="form-control form-control-lg", autocomplete="off") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.aktiviteti.label(class="form-control-label") }}
+                {% if form.aktiviteti.errors %}
+                    {{ form.aktiviteti(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.aktiviteti.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.aktiviteti(class="form-control form-control-lg", autocomplete="off") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.vijueshmeria.label(class="form-control-label") }}
+                {% if form.vijueshmeria.errors %}
+                    {{ form.vijueshmeria(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.vijueshmeria.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.vijueshmeria(class="form-control form-control-lg", autocomplete="off") }}
+                {% endif %}
+            </div>
+            <div class="form-group m-2">
+                {{ form.submit(class="btn btn-danger") }}
+            </div>
+        </fieldset>
+    </form>
+</div>
+{% endblock content %}

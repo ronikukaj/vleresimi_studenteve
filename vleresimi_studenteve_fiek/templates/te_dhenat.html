@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="container">
+    <table class="table table-striped rounded">
+        <thead>
+            <tr class="bg-danger text-white">
+                <th scope="col">Id</th>
+                <th scope="col">Emri</th>
+                <th scope="col">Mbiemri</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for studenti in studentet %}
+                <tr>
+                    <th scope="row">{{ studenti.given_id }}</th>
+                    <td><a class="link link-danger" href="{{ url_for('individual_data', studenti_given_id=studenti.given_id) }}">{{ studenti.emri }}</a></td>
+                    <td>{{ studenti.mbiemri }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}
