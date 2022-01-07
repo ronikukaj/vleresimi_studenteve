@@ -26,7 +26,7 @@ class StudentLoaderForm(FlaskForm):
 class StudentEvaluationForm(FlaskForm):
     emri = StringField('Emri', render_kw={'readonly': True})
     mbiemri = StringField('Mbiemri', render_kw={'readonly': True})
-    lenda = SelectField('Lenda', choices=['BET', 'Matematike', 'BP', 'Fizike', 'CommSkills'])
+    lenda = StringField('Lenda', render_kw={'readonly': True})
     kollokfiumi_1 = StringField('Kollokfiumi 1', validators=[DataRequired()])
     kollokfiumi_2 = StringField('Kollokfiumi 2', validators=[DataRequired()])
     detyra_1 = StringField('Detyra 1', validators=[DataRequired()])

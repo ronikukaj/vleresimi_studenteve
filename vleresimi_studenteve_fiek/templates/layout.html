@@ -20,15 +20,21 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('registration') }}">Regjistrimi i Studenteve</a>
+                        <a class="nav-link" href="{{ url_for('prof_data') }}"><strong>Profesori</strong></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('evaluation') }}">Vleresimi i Studenteve</a>
+                        <a class="nav-link" href="{{ url_for('registration') }}"><strong>Regjistrimi i Studenteve</strong></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('data') }}">Te dhena</a>
+                        <a class="nav-link" href="{{ url_for('evaluation') }}"><strong>Vleresimi i Studenteve</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item nav-link" href="{{ url_for('data') }}"><strong>Te dhena</strong></a>
                     </li>
                 </ul>
+            </div>
+            <div class="navbar">
+                <a class="nav-link text-danger" href="{{ url_for('prof_logout') }}"><strong>Dilni</strong></a>
             </div>
         </div>
     </nav>

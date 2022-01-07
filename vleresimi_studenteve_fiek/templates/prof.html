@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="container">
+    <br><br>
+    <h2>Profesori i lendës - {{ current_user.emri }} {{ current_user.mbiemri }}</h2>
+    <h3>Lënda - {{ current_user.lenda }}</h3>
+    <h3>ID - {{ current_user.given_id }}</h3>
+</div>
+{% endblock content %}

@@ -1,4 +1,17 @@
-from vleresimi_studenteve_fiek import db
+from vleresimi_studenteve_fiek import db, login_manager
+from flask_login import UserMixin
+
+@login_manager.user_loader
+def load_user(prof_given_id):
+    return Profesori.query.get(int(prof_given_id))
+
+class Profesori(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key=True)
+    given_id = db.Column(db.Integer, unique=True)
+    emri = db.Column(db.String(20))
+    mbiemri = db.Column(db.String(20))
+    lenda = db.Column(db.String(50))
+    password = db.Column(db.String(30))
 
 class Studenti(db.Model):
     id = db.Column(db.Integer, primary_key=True)
